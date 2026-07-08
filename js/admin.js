@@ -334,7 +334,7 @@ function markDirty() {
   state.dirty = true;
 }
 
-async function persistData(message) {
+async function persistData(message, attempt = 1) {
   markDirty();
   renderEditor();
   if (!requireSettings()) return;
@@ -344,6 +344,12 @@ async function persistData(message) {
     state.dirty = false;
     log(`Сохранено в GitHub: ${message}`, 'ok');
   } catch (e) {
+    const isConflict = /409/.test(e.message);
+    if (isConflict && attempt < 3) {
+      log(`Конфликт версий, пробую снова (${attempt}/2)…`);
+      await new Promise(r => setTimeout(r, 400));
+      return persistData(message, attempt + 1);
+    }
     log(`Не удалось сохранить: ${e.message}`, 'err');
   }
 }
