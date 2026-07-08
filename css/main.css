@@ -46,9 +46,9 @@ body:not(.reader-page)::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(760px 480px at 12% -8%, rgba(192, 38, 211, 0.30), transparent 60%),
-    radial-gradient(680px 520px at 88% 4%, rgba(124, 58, 237, 0.26), transparent 62%),
-    radial-gradient(900px 620px at 50% 115%, rgba(239, 43, 107, 0.20), transparent 65%);
+    radial-gradient(760px 480px at 12% -8%, rgba(192, 38, 211, 0.48), transparent 60%),
+    radial-gradient(680px 520px at 88% 4%, rgba(124, 58, 237, 0.42), transparent 62%),
+    radial-gradient(900px 620px at 50% 115%, rgba(239, 43, 107, 0.36), transparent 65%);
   filter: blur(10px);
   animation: aurora-drift 22s ease-in-out infinite alternate;
 }
@@ -98,7 +98,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  background: linear-gradient(100deg, var(--parchment) 15%, var(--aurora-pink) 55%, var(--aurora-violet) 90%);
+  background: linear-gradient(100deg, var(--aurora-crimson) 10%, var(--aurora-magenta) 55%, var(--aurora-violet) 95%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -142,11 +142,11 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
   letter-spacing: 0.01em;
   margin: 0 0 0.6rem;
-  background: linear-gradient(120deg, var(--parchment) 10%, var(--aurora-pink) 45%, var(--aurora-violet) 80%);
+  background: linear-gradient(120deg, var(--aurora-crimson) 5%, var(--aurora-magenta) 45%, var(--aurora-violet) 90%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 46px rgba(192, 38, 211, 0.25);
+  text-shadow: 0 0 56px rgba(192, 38, 211, 0.35);
 }
 
 .hero .tagline {
