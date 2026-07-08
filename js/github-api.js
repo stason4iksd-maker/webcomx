@@ -54,7 +54,9 @@ function fileToBase64(file) {
  * content — строка (уже декодированная из base64), пригодная для JSON.parse если нужно.
  */
 async function ghGetFile(settings, path) {
-  const res = await fetch(`${ghApiBase(settings)}/${path}?ref=${encodeURIComponent(settings.branch)}`, {
+  const bust = Date.now();
+  const res = await fetch(`${ghApiBase(settings)}/${path}?ref=${encodeURIComponent(settings.branch)}&_=${bust}`, {
+    cache: 'no-store',
     headers: {
       Authorization: `Bearer ${settings.token}`,
       Accept: 'application/vnd.github+json'
@@ -99,7 +101,9 @@ async function ghPutTextFile(settings, path, textContent, message) {
  */
 async function ghPutBinaryFile(settings, path, file, message) {
   const base64 = await fileToBase64(file);
-  const existingCheck = await fetch(`${ghApiBase(settings)}/${path}?ref=${encodeURIComponent(settings.branch)}`, {
+  const bust = Date.now();
+  const existingCheck = await fetch(`${ghApiBase(settings)}/${path}?ref=${encodeURIComponent(settings.branch)}&_=${bust}`, {
+    cache: 'no-store',
     headers: { Authorization: `Bearer ${settings.token}`, Accept: 'application/vnd.github+json' }
   });
   let sha = null;
