@@ -42,8 +42,8 @@
           "number": 1,
           "title": "Холст и Первая Точка",
           "style": {
-            "type": "color",
-            "value": "#bd0000"
+            "type": "theme",
+            "value": "nactir"
           },
           "pages": []
         },
