@@ -1,0 +1,71 @@
+/*
+  Тематические пресеты для страниц-читалок.
+  Применяются через JS: на <body> ставится класс theme-<key>,
+  а CSS-переменные --reader-bg / --reader-bg2 / --reader-accent
+  выставляются инлайново из data/comics.json (см. js/reader.js).
+  Так админка может как выбрать готовый пресет, так и задать
+  произвольный цвет заливки (тип style.type === "color").
+*/
+
+body.reader-page {
+  background: var(--reader-bg, var(--void));
+  transition: background 0.4s ease;
+}
+
+/* Нактир — звёздная пыль на пустоте */
+body.theme-nactir {
+  background-image:
+    radial-gradient(1px 1px at 8% 12%, rgba(236,230,216,0.55), transparent),
+    radial-gradient(1px 1px at 22% 38%, rgba(236,230,216,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 60% 8%, rgba(207,157,79,0.6), transparent),
+    radial-gradient(1px 1px at 75% 60%, rgba(236,230,216,0.4), transparent),
+    radial-gradient(1px 1px at 40% 80%, rgba(236,230,216,0.35), transparent),
+    radial-gradient(1.5px 1.5px at 90% 85%, rgba(207,157,79,0.5), transparent),
+    linear-gradient(180deg, var(--reader-bg, #08070b), var(--reader-bg2, #12101a));
+  background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, no-repeat;
+  background-size: 260px 260px, 300px 300px, 340px 340px, 280px 280px, 320px 320px, 360px 360px, cover;
+  background-attachment: fixed;
+}
+
+/* Пепел / Последний Причал — гарь и ржавчина */
+body.theme-wasteland {
+  background-image:
+    linear-gradient(180deg, var(--reader-bg, #181310), var(--reader-bg2, #241a14));
+  position: relative;
+}
+body.theme-wasteland::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
+  background:
+    repeating-linear-gradient(115deg, rgba(181,80,46,0.05) 0 2px, transparent 2px 6px),
+    repeating-linear-gradient(25deg, rgba(0,0,0,0.15) 0 2px, transparent 2px 8px);
+}
+
+/* Альтерия — стеклянный город, холодный свет */
+body.theme-alteria {
+  background-image:
+    linear-gradient(180deg, var(--reader-bg, #0b131c), var(--reader-bg2, #111d2b));
+  position: relative;
+}
+body.theme-alteria::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(rgba(111,184,196,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111,184,196,0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Произвольная заливка цветом — без текстуры, только чистый цвет */
+body.theme-custom {
+  background-image: none;
+  background-color: var(--reader-bg, var(--void));
+}

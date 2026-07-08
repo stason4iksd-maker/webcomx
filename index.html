@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ШЁПОТ — Хроники Нактира</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">ШЁПОТ<small>webcomic archive</small></div>
+  <nav>
+    <a href="index.html">Читать</a>
+    <a href="admin.html">Админка</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <p class="mono-label" id="site-tagline-label">свидетель угасших миров</p>
+  <h1 id="site-title">ШЁПОТ</h1>
+  <p class="tagline" id="site-tagline">Загрузка…</p>
+
+  <div class="witness-line" aria-hidden="true">
+    <svg viewBox="0 0 720 90" preserveAspectRatio="none">
+      <line x1="30" y1="45" x2="690" y2="45" stroke="var(--line)" stroke-width="1"/>
+      <circle cx="90" cy="45" r="5" fill="var(--starlight)"/>
+      <text x="90" y="70" text-anchor="middle" class="stop-label">Книга I</text>
+      <circle cx="360" cy="45" r="5" fill="var(--ember)"/>
+      <text x="360" y="70" text-anchor="middle" class="stop-label">Книга II</text>
+      <circle cx="630" cy="45" r="5" fill="var(--glass)"/>
+      <text x="630" y="70" text-anchor="middle" class="stop-label">Книга III</text>
+      <circle id="witness-dot" cx="90" cy="45" r="3.2" fill="var(--parchment)">
+        <animateMotion dur="9s" repeatCount="indefinite"
+          path="M0,0 L270,0 L540,0 L270,0 L0,0" />
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<main id="books-container">
+  <p class="mono-label" style="text-align:center; padding: 2rem;">Загрузка глав…</p>
+</main>
+
+<footer class="site-footer">
+  собрано из «Книга первая / вторая / третья» · <a href="admin.html">управление главами</a>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

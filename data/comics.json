@@ -1,0 +1,80 @@
+{
+  "site": {
+    "title": "ШЁПОТ",
+    "subtitle": "Хроники Нактира",
+    "tagline": "Свидетель угасших миров падает сквозь холст, пепел и стекло — и учится быть смертным."
+  },
+  "themes": {
+    "nactir": {
+      "label": "Нактир",
+      "description": "Зал Первых Воспоминаний, холст тьмы, звёздная пыль",
+      "bg": "#08070b",
+      "bg2": "#12101a",
+      "accent": "#cf9d4f",
+      "text": "#ece6d8"
+    },
+    "wasteland": {
+      "label": "Последний Причал",
+      "description": "Пост-апокалипсис, ржавчина, пепельное небо",
+      "bg": "#181310",
+      "bg2": "#241a14",
+      "accent": "#b5502e",
+      "text": "#ece6d8"
+    },
+    "alteria": {
+      "label": "Альтерия",
+      "description": "Стеклянная утопия, контр-энтропия, холодное пламя",
+      "bg": "#0b131c",
+      "bg2": "#111d2b",
+      "accent": "#6fb8c4",
+      "text": "#eaf3f5"
+    }
+  },
+  "books": [
+    {
+      "id": "book1",
+      "number": 1,
+      "title": "Писец угасших звёзд",
+      "defaultTheme": "nactir",
+      "chapters": [
+        { "id": "b1c1", "number": 1, "title": "Холст и Первая Точка", "style": { "type": "theme", "value": "nactir" }, "pages": [] },
+        { "id": "b1c2", "number": 2, "title": "Первый Урок Ренкаро", "style": { "type": "theme", "value": "nactir" }, "pages": [] },
+        { "id": "b1c3", "number": 3, "title": "Ремесло Забвения", "style": { "type": "theme", "value": "nactir" }, "pages": [] },
+        { "id": "b1c4", "number": 4, "title": "Аномалия по имени Китера", "style": { "type": "theme", "value": "nactir" }, "pages": [] },
+        { "id": "b1c5", "number": 5, "title": "Трещина в Бесстрастии", "style": { "type": "theme", "value": "nactir" }, "pages": [] },
+        { "id": "b1c6", "number": 6, "title": "Первое Неповиновение", "style": { "type": "theme", "value": "nactir" }, "pages": [] },
+        { "id": "b1c7", "number": 7, "title": "Приговор и Побег", "style": { "type": "theme", "value": "nactir" }, "pages": [] }
+      ]
+    },
+    {
+      "id": "book2",
+      "number": 2,
+      "title": "Человек по имени Шёпот",
+      "defaultTheme": "wasteland",
+      "chapters": [
+        { "id": "b2c1", "number": 1, "title": "Падение в Реальность", "style": { "type": "theme", "value": "wasteland" }, "pages": [] },
+        { "id": "b2c2", "number": 2, "title": "Спасение", "style": { "type": "theme", "value": "wasteland" }, "pages": [] },
+        { "id": "b2c3", "number": 3, "title": "Последний Причал", "style": { "type": "theme", "value": "wasteland" }, "pages": [] },
+        { "id": "b2c4", "number": 4, "title": "Уроки Жизни", "style": { "type": "theme", "value": "wasteland" }, "pages": [] },
+        { "id": "b2c5", "number": 5, "title": "Первая Тень", "style": { "type": "theme", "value": "wasteland" }, "pages": [] },
+        { "id": "b2c6", "number": 6, "title": "Основание «Теней»", "style": { "type": "theme", "value": "wasteland" }, "pages": [] },
+        { "id": "b2c7", "number": 7, "title": "Последняя Жертва", "style": { "type": "theme", "value": "wasteland" }, "pages": [] }
+      ]
+    },
+    {
+      "id": "book3",
+      "number": 3,
+      "title": "Между Молотом и Наковальней",
+      "defaultTheme": "alteria",
+      "chapters": [
+        { "id": "b3c1", "number": 1, "title": "Пробуждение в стеклянном городе", "style": { "type": "theme", "value": "alteria" }, "pages": [] },
+        { "id": "b3c2", "number": 2, "title": "Ленинскбург — Утопия как Щит", "style": { "type": "theme", "value": "alteria" }, "pages": [] },
+        { "id": "b3c3", "number": 3, "title": "Ремесло как Искупление", "style": { "type": "theme", "value": "alteria" }, "pages": [] },
+        { "id": "b3c4", "number": 4, "title": "Пещера и Кристалл Анамнезиса", "style": { "type": "theme", "value": "alteria" }, "pages": [] },
+        { "id": "b3c5", "number": 5, "title": "Хранитель и Приговор", "style": { "type": "theme", "value": "alteria" }, "pages": [] },
+        { "id": "b3c6", "number": 6, "title": "Ритуал Отречения", "style": { "type": "theme", "value": "alteria" }, "pages": [] },
+        { "id": "b3c7", "number": 7, "title": "Первый Шаг в Бездну", "style": { "type": "theme", "value": "alteria" }, "pages": [] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Админка — ШЁПОТ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+<header class="site-header">
+  <div class="brand">ШЁПОТ<small>админка / архив глав</small></div>
+  <nav>
+    <a href="index.html">← на сайт</a>
+  </nav>
+</header>
+
+<main class="admin-wrap">
+
+  <section class="panel" id="conn-panel">
+    <h2>Подключение к репозиторию</h2>
+    <p class="hint">
+      Токен хранится только в этом браузере (localStorage) и уходит только в api.github.com.
+      Используйте fine-grained personal access token с правом <code>Contents: Read and write</code>
+      только для этого репозитория.
+    </p>
+    <div class="conn-grid">
+      <label>Owner (логин/организация)
+        <input type="text" id="gh-owner" placeholder="например, saitplug">
+      </label>
+      <label>Repo
+        <input type="text" id="gh-repo" placeholder="например, webcomic">
+      </label>
+      <label>Branch
+        <input type="text" id="gh-branch" placeholder="main" value="main">
+      </label>
+      <label>Token
+        <input type="password" id="gh-token" placeholder="github_pat_...">
+      </label>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="btn-save-settings">Сохранить настройки</button>
+      <button class="btn ghost" id="btn-test-conn">Проверить подключение</button>
+      <button class="btn ghost" id="btn-load-data">Загрузить главы из GitHub</button>
+      <button class="btn danger ghost" id="btn-clear-settings">Забыть токен</button>
+    </div>
+  </section>
+
+  <section class="panel" id="log-panel">
+    <h2>Журнал</h2>
+    <div class="log" id="log-output">Ожидание действий…</div>
+  </section>
+
+  <section class="panel" id="editor-panel" style="display:none;">
+    <div class="panel-head">
+      <h2>Книги и главы</h2>
+      <button class="btn" id="btn-save-now">Сохранить в GitHub</button>
+    </div>
+    <div id="books-editor"></div>
+
+    <div class="add-book-form">
+      <h3>Добавить книгу</h3>
+      <div class="conn-grid">
+        <label>Название книги
+          <input type="text" id="new-book-title" placeholder="Книга четвёртая: ...">
+        </label>
+        <label>Тема по умолчанию
+          <select id="new-book-theme"></select>
+        </label>
+      </div>
+      <button class="btn ghost" id="btn-add-book">+ Добавить книгу</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/github-api.js"></script>
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
